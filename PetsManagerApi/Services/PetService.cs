@@ -37,7 +37,7 @@ namespace PetsManagerApi.Services
         {
             return _petDbContext.Pets.Where(x => x.IdUser == IdUser).ToList();
         }
-        //prueba
+        //prueba 1
         public List<Pets> GetPetsByName(string name)
         {
             var sql = $"SELECT * FROM Pets WHERE Name = '{name}'";
