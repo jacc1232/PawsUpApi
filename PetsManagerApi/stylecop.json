@@ -1,0 +1,23 @@
+﻿{
+    "settings": {
+        "documentationRules": {
+            "documentExposedElements": false,
+            "documentInternalElements": false
+        },
+        "orderingRules": {
+            "elementOrder": [
+                "kind",
+                "accessibility",
+                "constant",
+                "static",
+                "readonly"
+            ]
+        },
+        "namingRules": {
+            "allowCommonHungarianPrefixes": true
+        },
+        "layoutRules": {
+            "newlineAtEndOfFile": "require"
+        }
+    }
+}
