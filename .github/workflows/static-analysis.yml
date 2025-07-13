@@ -1,0 +1,24 @@
+name: "Static Code Analysis for PRs"
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'  # Cambia si usas .NET 6 o 7
+
+      - name: Restore dependencies
+        run: dotnet restore PawsUpApi/PetsManagerApi/PawsUpApi.csproj
+
+      - name: Build with analyzers
+        run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.csproj --no-restore -warnaserror
