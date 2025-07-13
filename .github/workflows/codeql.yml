@@ -41,8 +41,11 @@ jobs:
           build-mode: manual
           queries: +security-extended,security-and-quality
 
-      - name: Build project
-        run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.sln --configuration Release
+      - name: Restore dependencies
+        run: dotnet restore PawsUpApi/PetsManagerApi/PawsUpApi.sln
+
+      - name: Build with analyzers
+        run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.sln --no-restore -warnaserror
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
