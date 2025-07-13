@@ -21,4 +21,4 @@ jobs:
         run: dotnet restore PetsManagerApi/PawsUpApi.csproj
 
       - name: Build with analyzers
-        run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.csproj --no-restore -warnaserror
+        run: dotnet build PetsManagerApi/PawsUpApi.csproj --no-restore -warnaserror
