@@ -42,7 +42,7 @@ jobs:
           queries: +security-extended,security-and-quality
 
       - name: Build project
-        run: dotnet build src/PawsUpApi/PetsManagerApi/PawsUpApi.sln --configuration Release
+        run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.sln --configuration Release
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
