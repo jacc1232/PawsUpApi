@@ -1,4 +1,5 @@
-﻿using PetsManagerApi.DataAccess;
+﻿using Microsoft.EntityFrameworkCore;
+using PetsManagerApi.DataAccess;
 using PetsManagerApi.Helpers.Blob;
 using PetsManagerApi.Models;
 
@@ -35,6 +36,12 @@ namespace PetsManagerApi.Services
         public List<Pets> GetPetsByUser(int IdUser)
         {
             return _petDbContext.Pets.Where(x => x.IdUser == IdUser).ToList();
+        }
+
+        public List<Pets> GetPetsByName(string name)
+        {
+            var sql = $"SELECT * FROM Pets WHERE Name = '{name}'";
+            return _petDbContext.Pets.FromSqlRaw(sql).ToList();
         }
 
     }
