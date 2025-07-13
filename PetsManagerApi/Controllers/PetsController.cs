@@ -48,5 +48,12 @@ namespace PetsManagerApi.Controllers
             }
             return pets;
         }
+
+        [HttpGet("{name}")]
+        public IActionResult GetByName(string name)
+        {
+            var result = _petService.GetPetsByName(name);
+            return Ok(result);
+        }
     }
 }
