@@ -18,7 +18,7 @@ jobs:
           dotnet-version: '8.0.x'  # o ajusta si usas otra versión
 
       - name: Restore dependencies
-        run: dotnet restore PawsUpApi/PetsManagerApi/PawsUpApi.csproj
+        run: dotnet restore PetsManagerApi/PawsUpApi.csproj
 
       - name: Build with analyzers
         run: dotnet build PawsUpApi/PetsManagerApi/PawsUpApi.csproj --no-restore -warnaserror
